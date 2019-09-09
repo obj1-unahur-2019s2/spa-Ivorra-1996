@@ -1,5 +1,12 @@
-
+import spa.*
 object olivia {
+	var estres = true
+	var concentracion = 6
+	method gradoDeConcentracion(){return concentracion}
+	method recibirMasajes(){return concentracion += 3}
+	method discute(){return concentracion -= 1}
+	method darseUnBanioDeVapor(){estres = false}
+	method estres(){return estres}
 }
 
 
@@ -21,25 +28,30 @@ object bruno {
 	
 	method estaPerfecto() { return self.esFeliz() and not self.tieneSed() and self.peso().between(50000, 70000) }
 	method mediodiaEnCasa() { 
-		self.comerFideos()
-		// y que mas?
+		self.comerFideos() 
+		self.tomarAgua()
+		self.verElNoticiero()
+		/*no le agregue un return porque en el enunciado no especifica , solo dice agregar estos 3 mensajes */
 	}
 }
 
 object ramiro {
-	method recibirMasajes() { /*... completar ...*/ }
-	method darseUnBanioDeVapor() { /*... completar ...*/ }
-	method comerseUnBigMac() { /*... completar ...*/ }
-	method bajarALaFosa() { /*... completar ...*/ }
-	method jugarAlPaddle() { /*... completar ...*/ }
+	var contracturado = 0
+	var pielGrasosa = true
+	method pielGrasosa(){return pielGrasosa }
+	method contracturado(){return contracturado}
+	method recibirMasajes() {
+		if(contracturado == 1 or contracturado == 0){contracturado = 0}
+		else{contracturado -= 2}/*pense una banda de como hacerlo y se me ocurrio asi ,aunque me parece que esta mal la linea de codigo de "recibirMasajes()" */
+	}
+	method darseUnBanioDeVapor() {pielGrasosa = false}
+	method comerseUnBigMac() {pielGrasosa = true}
+	method bajarALaFosa() {pielGrasosa = true ; contracturado += 1 }
+	method jugarAlPaddle() {contracturado += 3}
 	
 	method diaDeTrabajo() { 
-		/*... completar ...*/
+		self.bajarALaFosa()
+		self.comerseUnBigMac()
+		self.bajarALaFosa()
 	}
 }
-
-
-
-
-
-
